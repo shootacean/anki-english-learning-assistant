@@ -25,3 +25,11 @@ def invoke(action, **params):
     if response["error"] is not None:
         raise Exception(response["error"])
     return response["result"]
+
+
+def create_deck(**params):
+    return invoke("createDeck", **params)
+
+
+def deck_names(**params):
+    return invoke("deckNames", **params)
