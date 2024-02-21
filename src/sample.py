@@ -8,6 +8,7 @@ import urllib.request
 # ANKI_CONNECT_URL = 'http://localhost:8765'
 ANKI_CONNECT_URL = "http://host.docker.internal:8765"
 
+
 def request(action, **params):
     return {"action": action, "params": params, "version": 6}
 
