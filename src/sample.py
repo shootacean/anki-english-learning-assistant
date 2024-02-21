@@ -1,13 +1,12 @@
-# Anki Connect
-# https://ankiweb.net/shared/info/2055492159
-# ANKI_CONNECT_URL = 'http://localhost:8765'
-ANKI_CONNECT_URL = "http://host.docker.internal:8765"
-
-# below code is sample from https://foosoft.net/projects/anki-connect/
-
 import json
 import urllib.request
 
+# Anki Connect
+# https://ankiweb.net/shared/info/2055492159
+# below code is sample from https://foosoft.net/projects/anki-connect/
+
+# ANKI_CONNECT_URL = 'http://localhost:8765'
+ANKI_CONNECT_URL = "http://host.docker.internal:8765"
 
 def request(action, **params):
     return {"action": action, "params": params, "version": 6}
