@@ -1,5 +1,6 @@
 import json
 import urllib.request
+import traceback
 
 # Anki Connect
 # https://ankiweb.net/shared/info/2055492159
@@ -33,3 +34,17 @@ class Anki:
 
     def deck_names(self, **params):
         return self.__invoke("deckNames", **params)
+
+    def add_note(self, **params):
+        try:
+            result = self.__invoke("addNote", **params)
+        except Exception as e:
+            if e.args == ('cannot create note because it is a duplicate',):
+                print('WARNING: ノートが重複しています。')
+            else:
+                print(type(e.args))
+                print(e.args)
+                traceback.print_exc()
+                raise e
+        else:
+            return result
