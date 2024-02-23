@@ -39,8 +39,8 @@ class Anki:
         try:
             result = self.__invoke("addNote", **params)
         except Exception as e:
-            if e.args == ('cannot create note because it is a duplicate',):
-                print('WARNING: ノートが重複しています。')
+            if e.args == ("cannot create note because it is a duplicate",):
+                print("WARNING: ノートが重複しています。")
             else:
                 print(type(e.args))
                 print(e.args)
